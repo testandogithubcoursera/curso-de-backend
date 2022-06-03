@@ -7,8 +7,8 @@ function solveRect(l,b){
         console.log("rectangle dimension should be greather than 0")
     }
     else{
-        console.log("the area of the rectangle is " + l * b);
-        console.log("the perimiter is");
+        console.log("the area of the rectangle is " + rect.area(l,b);
+        console.log("the perimiter is" + rect.perimeter(l,b);
     }
 }
 
