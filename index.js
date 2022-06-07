@@ -1,17 +1,20 @@
-var rect = require('./rectangle')
+const express = require('express')
+const http = require('http');
 
-function solveRect(l,b){
-    console.log("solving for rectangle with l =");
+const hostname = 'localhost';
+const port = 3000;
 
-    if(l <=0 || b <=0){
-        console.log("rectangle dimension should be greather than 0")
-    }
-    else{
-        console.log("the area of the rectangle is " + l * b);
-        console.log("the perimiter is");
-    }
-}
+const app = express();
 
-solveRect(2,4);
-solveRect(3,5);
-solveRect(0,5);
+app.use((req,res,next)=> {
+    console.log(req.header);
+    res.statusCode = 200;
+    res.setHeader('COntext-Type', 'text/html');
+    res.end('<html><body><h1>This is an express server </h1></body></html>')
+})
+
+const server = http.createServer(app);
+
+server.listen(port, hostname, ()=> {
+    console.log('server running')
+})
